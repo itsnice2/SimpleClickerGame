@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Clicker Game</title>
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/simpleclickergame.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/simpleclickergame.js"></script>
+	
+	<div id="header" align="center">
+		<h1>Simple Clicker Game</h1>
+		<hr style="width:90%;">
+	</div>
+	
+	<div id="gamearea" align="center">
+		<div id="numberarea">
+			<stats>Klicks insgesamt: <label id="clicklabel" onclick="zaehler();">0</label>
+			<br>Klicks pro Sekunde: <label id="clickspersecond">0</label>
+			</stats>
+			<br><howmanyclicks>Klicks: <label id="cklickstospend" name="cklickstospend">0</label></howmanyclicks>
+		</div>
+		
+		<div>
+			<div id="clickarea" style="padding-top: 20px">
+				<!-- <button id="clickme" name="clickme" onclick="buy_autoclicker()"> <img src="assets/images/clickme.png"/> </button>
+				<img src="assets/images/clickme.png" id="clickme" name="clickme" onclick="click_click()"/>
+				<button class="btn btn-outline-dark" id="manualclick" name="manualclick" onclick="click_click()"><br>Hol dir den Klick!<br><br></button> -->
+				<img class="einfachklick" src="assets/images/clickme.png" id="manualclick" onclick="click_click()">
+
+
+				
+			</div>
+			
+			<div id="addons" style="padding-top: 20px">
+				<hr style="width:40%;">
+				<h5>Add-Ons kaufen:</h5>
+				<br>
+				<button class="btn btn-outline-dark" id="autoclick" name="autoclick" onclick="buy_autoclicker()">10 Klicks</button>
+				<label id="autoclickcount">0</label>x Autoklicker - Klickt 1x pro Sekunde
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer" align="center" style="padding-top: 20px">
+		<hr style="width:90%;">
+		Simple Clicker Game (c) 2024 by <a href="https://itsnice2.de" target="_blank">itsnice2<a/> <a href="https://github.com/itsnice2" target="_blank"><img src="assets/images/github-mark.png" height="16px"></a>
+		<div id="versioninfo" style="padding-top: 10px">
+			<br><info><infohead>Version 0.1</infohead>
+			<br>Speichern noch nicht möglich</info>
+		</div>
+	</div>
+	
+</body>
+</html>

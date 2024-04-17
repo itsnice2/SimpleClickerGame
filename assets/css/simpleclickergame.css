@@ -1,0 +1,56 @@
+/*
+#manualclick{
+	background-color:white;
+	border-width: 0px;
+}
+
+#manualclick:active{
+	visibility: collapse;
+}
+*/
+
+.einfachklick:active{
+	//visibility: none;
+	width: 195px;
+}
+
+#autoclick{
+	background-color:#eeeeee;
+	border-width: 1px;
+	border-color: #eeeeee;
+}
+
+#autoclick:active{
+	background-color: #aaffaa;
+}
+
+#autoclick:hover{
+	color: red;
+}
+
+#autoclick:disabled{
+	background-color: #efefef;
+}
+
+H5{
+	font-size: 22px;
+	font-style: italic;
+}
+
+stats{
+	font-size: 18px;
+	color: #999999;
+}
+
+howmanyclicks{
+	font-size: 28px;
+}
+
+infohead{
+	font-weight: bold;
+}
+
+info{
+	font-style: italic;
+	font-size: small;
+}
