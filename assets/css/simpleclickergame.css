@@ -1,16 +1,33 @@
-/*
-#manualclick{
-	background-color:white;
-	border-width: 0px;
-}
 
-#manualclick:active{
-	visibility: collapse;
-}
+/* In case you want to colour the different areas
+
+	#header{
+		background-color: rgb(255, 207, 207);
+	}
+
+	#numberarea{
+		background-color: rgb(212, 255, 207);
+	}
+
+	#gamearea{
+		background-color: rgb(212, 207, 255);
+	}
+
+	#clickarea{
+		background-color: rgb(253, 255, 207);
+	}
+
+	#addons{
+		background-color: rgb(207, 250, 255);
+	}
+
+	#footer{
+		background-color: rgb(164, 164, 164);
+	}
+
 */
 
 .einfachklick:active{
-	//visibility: none;
 	width: 195px;
 }
 
@@ -30,6 +47,14 @@
 
 #autoclick:disabled{
 	background-color: #efefef;
+}
+
+#manualclick:active{
+	background-color: #aaffaa;
+}
+
+#updateautoclick:active{
+	background-color: #aaffaa;
 }
 
 H5{
