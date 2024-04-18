@@ -11,7 +11,7 @@
 <body>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/simpleclickergame.js"></script>
-	<script src="assets/js/Clicker.js"></script>
+	<script src="assets/js/autoclicker.js"></script>
 
 <!-- ######### H E A D E R  ############################################################################# -->		
 
@@ -41,11 +41,26 @@
 				<hr style="width:40%;">
 				<h5>Add-Ons kaufen:</h5>
 				<br>
+
+				<!-- manual clicker -->
 				<button class="btn btn-outline-dark" id="manualclick" name="manualclick" onclick="upgrade_click_click()">+</button> Aufwerten für <label id="upgrademanualclickcost">1000</label> Klicks: Pro Klick 2 Klicks mehr! (Momentan: <label id="upgrademanualclickcount">1</label>)
 				<br>
+
+				<!-- Autoclicker -->
 				<button class="btn btn-outline-dark" id="autoclick" name="autoclick" onclick="buy_autoclicker()">10 Klicks</button>
 				<label id="autoclickcount">0</label>x Autoklicker - Klickt <label id="upgradeautoclickcount">1</label>x pro Sekunde 
 				<button class="btn btn-outline-dark" id="updateautoclick" name="updateautoclick" onclick="upgrade_autoclicker()">+</button> Aufwerten für <label id="upgradeautoclickcost">1000</label> Klicks
+				<br>
+				<!-- Megalicker -->
+				<button class="btn btn-outline-dark" id="megaclick" name="megaclick" onclick="buy_autoclicker()">1000 Klicks</button>
+				<label id="megaclickcount">0</label>x Megaklicker - Klickt <label id="upgrademegaclickcount">100</label>x pro Sekunde 
+				<button class="btn btn-outline-dark" id="updatemegaclick" name="updatemegaclick" onclick="upgrade_autoclicker()">+</button> Aufwerten für <label id="upgrademegaclickcost">100000</label> Klicks
+				<!--
+				var megaklicker = 0;
+				var megaklickerpreis = 1000;
+				var megaklickerupgrade = 100000;
+				var megaklickerprosekunde = 100;
+				-->
 			</div>
 		</div>
 	</div>
@@ -57,8 +72,7 @@
 		Simple Clicker Game (c) 2024 by <a href="https://itsnice2.de" target="_blank">itsnice2</a> 
 		<a href="https://github.com/itsnice2/SimpleClickerGame" target="_blank"><img src="assets/images/github-mark.png" height="16px"></a>
 		<br>
-		<!-- <label id="changelog" onclick="show_footer()">Show Changelog</label> -->
-		<label id="changelog" name="changelog" >Show Changelog</label>
+		<label id="changelog" onclick="show_footer()">Show Changelog</label>
 		<div id="versioninfo">
 			<info>
 				<p>
@@ -75,10 +89,10 @@
 			</info>
 		</div>
 	</div>
-
+<!--
 	<div align="center">
 		<button id="TestButton" name="TestButton" onclick="TestFunction()">MegaClickerTest</button> -> <label id="TestLabel">0</label>
 	</div>
-
+-->
 </body>
 </html>

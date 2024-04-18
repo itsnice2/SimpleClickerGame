@@ -1,11 +1,11 @@
 class Clicker
 {
-    /*
+    
     autoclickerNumbers  = 0;
     autoclickerPrice    = 10;
     autoclickerUpgrade  = 1000;
     autoclicksPerSecond = 1;
-    */
+    
 
     constructor(autoclickerNumbers, autoclickerPrice, autoclickerUpgrade, autoclicksPerSecond)
     {
@@ -14,15 +14,6 @@ class Clicker
         this.autoclickerUpgrade = autoclickerUpgrade;
         this.autoclicksPerSecond = autoclicksPerSecond;
     }
-
-    /*
-    MyObject = new Clicker();
-
-    NewObject.prototype = {
-        //
-    }
-    */
-
     
     buyClicker()
     {
