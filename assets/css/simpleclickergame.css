@@ -1,5 +1,7 @@
 
-/* In case you want to colour the different areas
+/* 
+	// Falls man die verschiedenen Bereich einfärben möchte
+	// In case you want to colour the different areas
 
 	#header{
 		background-color: rgb(255, 207, 207);
@@ -31,28 +33,17 @@
 	width: 195px;
 }
 
-#autoclick{
-	background-color:#eeeeee;
-	border-width: 1px;
-	border-color: #eeeeee;
-}
-
 #autoclick:active{
 	background-color: #aaffaa;
-}
-
-#autoclick:hover{
-	color: red;
 }
 
 #autoclick:disabled{
 	background-color: #efefef;
 }
 
-#manualclick:active{
-	background-color: #aaffaa;
+#manualclick:hover{
+	cursor: pointer;
 }
-
 #updateautoclick:active{
 	background-color: #aaffaa;
 }
@@ -78,4 +69,22 @@ infohead{
 info{
 	font-style: italic;
 	font-size: small;
+}
+
+#changelog{
+	cursor: pointer;
+}
+
+#addons{
+	padding-top: 20px; 
+	padding-bottom: 20px;
+}
+
+#versioninfo{
+	padding-top: 10px; 
+	display: none;
+}
+
+#clickarea{
+	padding-top: 20px
 }

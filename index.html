@@ -11,6 +11,7 @@
 <body>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/simpleclickergame.js"></script>
+	<script src="assets/js/Clicker.js"></script>
 
 <!-- ######### H E A D E R  ############################################################################# -->		
 
@@ -23,24 +24,24 @@
 
 	<div id="gamearea" align="center">
 		<div id="numberarea">
-			<stats>Klicks insgesamt: <label id="clicklabel" onclick="zaehler();">0</label>
+			<stats>Klicks insgesamt: <label id="clicklabel">0</label>
 			<br>Klicks pro Sekunde: <label id="clickspersecond">0</label>
 			</stats>
 			<br><howmanyclicks>Klicks: <label id="cklickstospend" name="cklickstospend">0</label></howmanyclicks>
 		</div>
 		
 		<div>
-			<div id="clickarea" style="padding-top: 20px">
+			<div id="clickarea">
 				<img class="einfachklick" src="assets/images/clickme.png" id="manualclick" onclick="click_click()">
 			</div>
 
 <!-- ######### U P G R A D E - A R E A ############################################################################# -->		
 
-			<div id="addons" style="padding-top: 20px">
+			<div id="addons" >
 				<hr style="width:40%;">
 				<h5>Add-Ons kaufen:</h5>
 				<br>
-				<button class="btn btn-outline-dark" id="manualclick" name="manualclick" onclick="upgrade_click_click()">+</button> Aufwerten für <label id="upgrademanualclickcost">1000</label> Klicks: Pro Klick 2 Klicks mehr!
+				<button class="btn btn-outline-dark" id="manualclick" name="manualclick" onclick="upgrade_click_click()">+</button> Aufwerten für <label id="upgrademanualclickcost">1000</label> Klicks: Pro Klick 2 Klicks mehr! (Momentan: <label id="upgrademanualclickcount">1</label>)
 				<br>
 				<button class="btn btn-outline-dark" id="autoclick" name="autoclick" onclick="buy_autoclicker()">10 Klicks</button>
 				<label id="autoclickcount">0</label>x Autoklicker - Klickt <label id="upgradeautoclickcount">1</label>x pro Sekunde 
@@ -51,15 +52,33 @@
 
 <!-- ######### F O O T E R ############################################################################# -->	
 
-	<div id="footer" align="center" style="padding-top: 20px">
+	<div id="footer" align="center">
 		<hr style="width:90%;">
 		Simple Clicker Game (c) 2024 by <a href="https://itsnice2.de" target="_blank">itsnice2</a> 
 		<a href="https://github.com/itsnice2/SimpleClickerGame" target="_blank"><img src="assets/images/github-mark.png" height="16px"></a>
-		<div id="versioninfo" style="padding-top: 10px">
-			<br><info><infohead>Version 0.1</infohead>
-			<br>Speichern noch nicht möglich</info>
+		<br>
+		<!-- <label id="changelog" onclick="show_footer()">Show Changelog</label> -->
+		<label id="changelog" name="changelog" >Show Changelog</label>
+		<div id="versioninfo">
+			<info>
+				<p>
+					<infohead>Version 0.2</infohead>
+					<br>Upgrades für manuelles Klicken
+					<br>Changelog kann man jetzt unsichtbar machen
+					<br>Anzeige der Zahlen aktualisiert schneller
+				</p>
+				<p>
+					<infohead>Version 0.1</infohead>
+					<br>Erste funktionierende Version
+					<br>Speichern noch nicht möglich
+				</p>
+			</info>
 		</div>
 	</div>
-	
+
+	<div align="center">
+		<button id="TestButton" name="TestButton" onclick="TestFunction()">MegaClickerTest</button> -> <label id="TestLabel">0</label>
+	</div>
+
 </body>
 </html>
