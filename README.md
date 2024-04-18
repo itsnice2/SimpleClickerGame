@@ -5,3 +5,4 @@ Goals:
 - updating mor functions
 - different languages
 - maybe a customizer, so you can change the theme of the game
+- saving progress
