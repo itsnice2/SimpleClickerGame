@@ -11,8 +11,9 @@
 <body>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/simpleclickergame.js"></script>
-	<script src="assets/js/autoclicker.js"></script>
 
+<!-- ToDo: Oberfläche in Flexbox packen
+		-> https://getbootstrap.com/docs/4.0/utilities/flex/ -->
 <!-- ######### H E A D E R  ############################################################################# -->		
 
 	<div id="header" align="center">
@@ -31,35 +32,75 @@
 		</div>
 		
 		<div>
-			<div id="clickarea">
+			<div id="clickarea"> 
+				<!-- Testbutton 
+				<button id="testbutton" onclick="TestFunktion(10000)">Test</button>
+				-->
 				<img class="einfachklick" src="assets/images/clickme.png" id="manualclick" onclick="click_click()">
 			</div>
 
 <!-- ######### U P G R A D E - A R E A ############################################################################# -->		
-
-			<div id="addons" >
+			
+			<div id="addons">
 				<hr style="width:40%;">
-				<h5>Add-Ons kaufen:</h5>
-				<br>
+				<h5 id="buyupgrades" style="display: none;">Upgrades kaufen:</h5>
 
-				<!-- manual clicker -->
+				<!-- Manualclicker -->
+				<table class="table w-auto" id="manualclicker" style="display: none;">
+					<thead>
+						<tr>
+						  <th scope="col"> </th>
+						  <th scope="col">Aufwerten</th>
+						  <th scope="col">Kosten</th>
+						  <th scope="col">Klicks pro Klick</th>
+						</tr>
+					</thead>
+					<tbody id="clicker">
+						<tr>
+						  <th scope="row"  class="text-center">Klicker</th>
+						  <td class="text-center"> <button class="btn btn-outline-dark" onclick="upgrade_click_click()">+</button> </td>
+						  <td class="text-center"> <label id="upgrademanualclickcost">1000</label> </td>
+						  <td class="text-center"> <label id="upgrademanualclickcount">1</label> </td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="table w-auto" id="upgradetable" style="display: none;">					
+					<thead>
+					  <tr>
+						<th scope="col" class="text-right"> </th>
+						<th scope="col" class="text-center">Kaufen</th>
+						<th scope="col" class="text-center">$</th>
+						<th scope="col" class="text-center">Klicks/s</th>
+						<th scope="col" class="text-center">Aufwerten</th>
+						<th scope="col" class="text-center">$</th>
+					  </tr>
+					</thead>
+					<tbody>
+						<!-- Autoclicker -->
+						<tr id="autoclicker">
+							<th scope="row" class="text-right">Autoklicker (<label id="autoclickcount">0</label>)</th>
+							<td class="text-center"> <button class="btn btn-outline-dark" onclick="buy_autoclicker()">+</button></td>
+							<td class="text-center"> <label id="autoclick" name="autoclick">10</label> </td>
+							<td class="text-center"> <label id="upgradeautoclickcount">1</label> </td>
+							<td class="text-center"> <button class="btn btn-outline-dark" id="updateautoclick" name="updateautoclick" onclick="upgrade_autoclicker()">+</button> </td>
+							<td class="text-center"> <label id="upgradeautoclickcost">1000</label> </td>
+						</tr>
+						<!-- Megalicker -->
+						<tr id="megaclicker" style="visibility: hidden;">
+							<th scope="row" class="text-right">Megaklicker (<label id="megaclickcount">0</label>)</th>
+							<td class="text-center"> <button class="btn btn-outline-dark" onclick="buy_megaclicker()">+</button> </td>
+							<td class="text-center"><label id="megaclick" name="megaclick">1000</label></td>
+							<td class="text-center"> <label id="upgrademegaclickcount">100</label> </td>
+							<td class="text-center"> <button class="btn btn-outline-dark" id="updatemegaclick" name="updatemegaclick" onclick="upgrade_megaclicker()">+</button> </td>
+							<td class="text-center"> <label id="upgrademegaclickcost">100000</label> </td>
+						</tr>
+						</tbody>
+				</table>
+
+				<!-- manual clicker 
 				<button class="btn btn-outline-dark" id="manualclick" name="manualclick" onclick="upgrade_click_click()">+</button> Aufwerten für <label id="upgrademanualclickcost">1000</label> Klicks: Pro Klick 2 Klicks mehr! (Momentan: <label id="upgrademanualclickcount">1</label>)
 				<br>
-
-				<!-- Autoclicker -->
-				<button class="btn btn-outline-dark" id="autoclick" name="autoclick" onclick="buy_autoclicker()">10 Klicks</button>
-				<label id="autoclickcount">0</label>x Autoklicker - Klickt <label id="upgradeautoclickcount">1</label>x pro Sekunde 
-				<button class="btn btn-outline-dark" id="updateautoclick" name="updateautoclick" onclick="upgrade_autoclicker()">+</button> Aufwerten für <label id="upgradeautoclickcost">1000</label> Klicks
-				<br>
-				<!-- Megalicker -->
-				<button class="btn btn-outline-dark" id="megaclick" name="megaclick" onclick="buy_autoclicker()">1000 Klicks</button>
-				<label id="megaclickcount">0</label>x Megaklicker - Klickt <label id="upgrademegaclickcount">100</label>x pro Sekunde 
-				<button class="btn btn-outline-dark" id="updatemegaclick" name="updatemegaclick" onclick="upgrade_autoclicker()">+</button> Aufwerten für <label id="upgrademegaclickcost">100000</label> Klicks
-				<!--
-				var megaklicker = 0;
-				var megaklickerpreis = 1000;
-				var megaklickerupgrade = 100000;
-				var megaklickerprosekunde = 100;
 				-->
 			</div>
 		</div>
@@ -72,9 +113,16 @@
 		Simple Clicker Game (c) 2024 by <a href="https://itsnice2.de" target="_blank">itsnice2</a> 
 		<a href="https://github.com/itsnice2/SimpleClickerGame" target="_blank"><img src="assets/images/github-mark.png" height="16px"></a>
 		<br>
-		<label id="changelog" onclick="show_footer()">Show Changelog</label>
-		<div id="versioninfo">
+		<label id="changelog" onclick="show_changelog()">Show Changelog</label>
+		<div id="versioninfo" style="display: none;">
 			<info>
+				<p>	
+					<infohead>Version 0.3</infohead>
+					<br>Zweites Upgrade hinzugefügt
+					<br>Layout der Upgrades geändert
+					<br>Texte etwas angepasst
+					<br>Upgrades erscheinen jetzt nach und nach
+				</p>
 				<p>
 					<infohead>Version 0.2</infohead>
 					<br>Upgrades für manuelles Klicken
