@@ -147,6 +147,8 @@ var autoklickerpreis = 10;
 var autoklickerupgrade = 1000;
 var autoklickerprosekunde = 1;
 var autoclickerpercentage = 0;
+var autoclickerpreimultiplikator = 1.018;
+var autoklickerupgrademultiplikator = 1.5;
 
 function buy_autoclicker()
 {
@@ -161,7 +163,7 @@ function buy_autoclicker()
 		document.getElementById('autoclickcount').innerHTML = autoklicker;
 		
 		// Preis anpassen
-		autoklickerpreis = autoklickerpreis * 1.2;
+		autoklickerpreis = autoklickerpreis * autoclickerpreimultiplikator;
 		document.getElementById('autoclick').innerText = autoklickerpreis.toFixed(2);
 		
 		// Klicks pro Sekunde aktualisieren
@@ -185,7 +187,7 @@ function upgrade_autoclicker()
 		document.getElementById('cklickstospend').innerHTML = klicksimbesitz.toFixed(2);
 
 		// Upgrade-Kosten
-		autoklickerupgrade = autoklickerupgrade * 1.5;
+		autoklickerupgrade = autoklickerupgrade * autoklickerupgrademultiplikator;
 		document.getElementById('upgradeautoclickcost').innerText = autoklickerupgrade.toFixed(2);
 
 		// Klicks pro Sekunde ändern
@@ -205,6 +207,8 @@ var megaklicker = 0;
 var megaklickerpreis = 1000;
 var megaklickerupgrade = 100000;
 var megaklickerprosekunde = 100;
+var megaclickerpreimultiplikator = 1.07;
+var megaklickerupgrademultiplikator = 1.5;
 
 function buy_megaclicker()
 {
@@ -219,7 +223,7 @@ function buy_megaclicker()
 		document.getElementById('megaclickcount').innerHTML = megaklicker;
 		
 		// Preis anpassen
-		megaklickerpreis = megaklickerpreis * 1.2;
+		megaklickerpreis = megaklickerpreis * megaclickerpreimultiplikator;
 		document.getElementById('megaclick').innerText = megaklickerpreis.toFixed(2);
 		
 		// Klicks pro Sekunde aktualisieren
@@ -241,7 +245,7 @@ function upgrade_megaclicker()
 		document.getElementById('cklickstospend').innerHTML = klicksimbesitz.toFixed(2);
 
 		// Upgrade-Kosten
-		megaklickerupgrade = megaklickerupgrade * 1.5;
+		megaklickerupgrade = megaklickerupgrade * megaklickerupgrademultiplikator;
 		document.getElementById('upgrademegaclickcost').innerText = megaklickerupgrade.toFixed(2);
 
 		// Klicks pro Sekunde ändern
